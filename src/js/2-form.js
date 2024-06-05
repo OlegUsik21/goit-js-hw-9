@@ -22,11 +22,16 @@ form.addEventListener('submit', (event) => {
         alert('Please fill all fields');
         return;
     }
+
+    console.log({ email: formData.email, message: formData.message });
+
     form.reset();
     localStorage.removeItem('feedback-form-state');
     formData.email = '';
     formData.message = '';
 });
+
+
 
 function saveToLS(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
